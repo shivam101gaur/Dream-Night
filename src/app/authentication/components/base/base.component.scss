@@ -164,22 +164,36 @@
     position: fixed;
     width: 100vw;
     height: 100vw;
-    animation: rotategalaxy 300s linear 1s infinite forwards;
-    // border: solid 3px red;
+    animation: movestars 300s linear -100s infinite alternate;
+}
+.bgstarsrotateanimate {
+    animation: rotategalaxy 150s linear 0s infinite forwards;
 }
 .bgstars2 {
     position: fixed;
     width: 100vw;
     height: 100vw;
-    animation: rotategalaxy 380s linear 1s infinite forwards;
-    // border: solid 3px red;
+    animation: movestars 130s linear -100s infinite alternate;
+}
+.bgstars2rotateanimate {
+    animation: rotategalaxy 200s linear 0s infinite forwards;
 }
 .bgstars3 {
     position: fixed;
     width: 100vw;
     height: 100vw;
-    animation: rotategalaxy 320s linear 1s infinite forwards;
-    // border: solid 3px red;
+    animation: movestars 150s linear -100s infinite alternate;
+}
+.bgstars3rotateanimate {
+    animation: rotategalaxy 300s linear 0s infinite forwards;
+}
+@keyframes movestars {
+    0% {
+        transform: translate(0px, -1500px);
+    }
+    100% {
+        transform: translate(0px, 1500px);
+    }
 }
 
 @keyframes rotategalaxy {

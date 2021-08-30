@@ -1,4 +1,5 @@
-<div class="maincontainer" (click)="darksky=!darksky" [class.darkgalaxy]="darksky">
+<div class="maincontainer" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
+
 
   <div class="stars">
     <div class="star" *ngFor="let count of starCountArray">
@@ -6,21 +7,16 @@
     </div>
   </div>
 
-  <div class="bgstars">
+  <div class="bgstars" [class.bgstarsrotateanimate]="rotatesky">
     <div id='stars'></div>
   </div>
-  <div class="bgstars2">
+  <div class="bgstars2" [class.bgstars2rotateanimate]="rotatesky">
     <div id='stars2'></div>
   </div>
 
-  <div class="bgstars3">
+  <div class="bgstars3" [class.bgstars3rotateanimate]="rotatesky">
     <div id='stars3'></div>
   </div>
-
-
-
-
-
 
 
   <div id='title'>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-base',
   templateUrl: './base.component.html',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BaseComponent implements OnInit {
 
   darksky:boolean=false;
+  rotatesky:boolean=true;
   attachedString:string;
   starCountArray = new Array(25)
 
@@ -31,6 +33,10 @@ export class BaseComponent implements OnInit {
       e.preventDefault();
     }, wheelOpt); // mobile
     window.addEventListener('keydown', (e) => {
+      // console.log({e});
+      // if(e.key==' '||e.key=='Enter'){
+      //   this.hideshootingstars=!this.hideshootingstars
+      // }
       if (e.ctrlKey && (e.key == '=' || e.key == '-' || e.key == '_' || e.key == '+')) {
         e.preventDefault();
         return false;

@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
-  starCountArray = new Array(50)
+  darksky:boolean=false;
+  attachedString:string;
+  starCountArray = new Array(25)
 
   // call this to Disable
   disableScroll() {
@@ -40,6 +42,7 @@ export class BaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.disableScroll()
+    // this.attachedString = "kavya ❤"
   }
 
 }

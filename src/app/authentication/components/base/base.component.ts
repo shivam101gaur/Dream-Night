@@ -42,7 +42,8 @@ export class BaseComponent implements OnInit {
           this.attachedString = ""
         }
         else {
-          this.attachedString = "K♥VYA"
+          this.attachedString = "♥"
+          // this.attachedString = "K♥VYA"
         }
       }
 

@@ -1,9 +1,23 @@
-<div class="maincontainer" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
+<div class="maincontainer"  (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
 
 
   <div class="stars">
     <div class="star" *ngFor="let count of starCountArray">
-      {{ attachedString }}
+    </div>
+    <div class="star" >
+     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+       {{ attachedString }}
+     </span> 
+    </div>
+    <div class="star" >
+     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+       {{ attachedString }}
+     </span> 
+    </div>
+    <div class="star" >
+     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+       {{ attachedString }}
+     </span> 
     </div>
   </div>
 

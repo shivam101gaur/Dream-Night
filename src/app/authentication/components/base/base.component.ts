@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MusicControllerService } from 'src/app/services/music-controller.service';
 
 
 @Component({
@@ -8,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
-  darksky:boolean=false;
-  rotatesky:boolean=true;
-  attachedString:string;
+  darksky: boolean = false;
+  rotatesky: boolean = true;
+  attachedString: string = '';
   starCountArray = new Array(25)
 
   // call this to Disable
@@ -33,10 +34,23 @@ export class BaseComponent implements OnInit {
       e.preventDefault();
     }, wheelOpt); // mobile
     window.addEventListener('keydown', (e) => {
-      // console.log({e});
-      // if(e.key==' '||e.key=='Enter'){
-      //   this.hideshootingstars=!this.hideshootingstars
-      // }
+      console.log({e});
+
+      if (e.key=='q'||e.key=="Q") {
+        if (this.attachedString.length >= 1) {
+
+          this.attachedString = ""
+        }
+        else {
+          this.attachedString = "K♥VYA"
+        }
+      }
+
+      if (e.key == ' ' || e.key == 'Enter') {
+        console.log('playing song')
+        this.musicController.toggle_sound()
+        // this.musicController.toggle_sound()
+      }
       if (e.ctrlKey && (e.key == '=' || e.key == '-' || e.key == '_' || e.key == '+')) {
         e.preventDefault();
         return false;
@@ -44,11 +58,12 @@ export class BaseComponent implements OnInit {
     }, false);
   }
 
-  constructor() { }
+  constructor(public musicController: MusicControllerService) { }
 
   ngOnInit(): void {
+    // this.musicController.play_bgm()
     this.disableScroll()
-    // this.attachedString = "kavya ❤"
+    // this.attachedString = "Hi there ❤"
   }
 
 }

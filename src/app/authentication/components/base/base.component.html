@@ -1,35 +1,22 @@
-<div class="maincontainer"  (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
-
-  
-<div class="blurred-box">
-  <!--  you dont need the user-login-box html  -->
-  <!--  for demo purposes only and its shit  -->
-  <div class="user-login-box">
-    <span class="user-icon"></span>
-    <div class="user-name">Gilfoyle</div>
-    <input class="user-password" type="text" />
-  </div>
-  
-</div>
-
+<div class="maincontainer" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
 
   <div class="stars">
-    <div class="star" *ngFor="let count of starCountArray"> 
+    <div class="star" *ngFor="let count of starCountArray">
     </div>
-    <div class="star" >
-     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
-       {{ attachedString }}
-     </span> 
+    <div class="star">
+      <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+        {{ attachedString }}
+      </span>
     </div>
-    <div class="star" >
-     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
-       {{ attachedString }}
-     </span> 
+    <div class="star">
+      <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+        {{ attachedString }}
+      </span>
     </div>
-    <div class="star" >
-     <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
-       {{ attachedString }}
-     </span> 
+    <div class="star">
+      <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+        {{ attachedString }}
+      </span>
     </div>
   </div>
 
@@ -45,15 +32,18 @@
   </div>
 
 
-  <div id='title'>
-    <!-- <span>DREAM</span>
+  <div class='title'>
+    <span>DREAM</span>
     <br>
-    <span> WITH ME </span> -->
-    <!-- <br>
-    <span> WORLD </span> -->
-    <span> TASK-U </span>
+    <!-- <span> WITH ME </span> -->
     <br>
-    <span> TASKS UPDATER </span>
+    <span> NIGHT </span>
+  </div>
+
+  <div *ngIf="showhint" class="hint">
+    <span id="musichint">Press SPACE to toggle Music / </span>
+
+    <span id="moodhint">Click on screen to change MOOD</span>
   </div>
 
   <div class="midnight-moon">

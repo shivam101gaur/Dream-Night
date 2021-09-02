@@ -9,6 +9,7 @@ import { MusicControllerService } from 'src/app/services/music-controller.servic
 })
 export class BaseComponent implements OnInit {
 
+  showhint: boolean = false;
   darksky: boolean = false;
   rotatesky: boolean = true;
   attachedString: string = '';
@@ -34,9 +35,9 @@ export class BaseComponent implements OnInit {
       e.preventDefault();
     }, wheelOpt); // mobile
     window.addEventListener('keydown', (e) => {
-      console.log({e});
+      console.log({ e });
 
-      if (e.key=='q'||e.key=="Q") {
+      if (e.key == 'q' || e.key == "Q") {
         if (this.attachedString.length >= 1) {
 
           this.attachedString = ""
@@ -62,9 +63,20 @@ export class BaseComponent implements OnInit {
   constructor(public musicController: MusicControllerService) { }
 
   ngOnInit(): void {
+    document.body.style.cursor = 'none';
+    this.showHint()
     // this.musicController.play_bgm()
     this.disableScroll()
     // this.attachedString = "Hi there ❤"
+  }
+
+  showHint() {
+    if (!this.showhint) {
+      this.showhint = true
+      setTimeout(() => {
+        this.showhint = false
+      }, 15000);
+    }
   }
 
 }

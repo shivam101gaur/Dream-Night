@@ -3,8 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BaseComponent } from './components/base/base.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'night', pathMatch: 'full' },
-  { path: 'night', component:BaseComponent }
+  { path: '', component:BaseComponent }
 ];
 
 @NgModule({

@@ -1,6 +1,8 @@
 # DREAM-NIGHT
 # Hit SPACE for music
 
+![alt text](https://github.com/shivam101gaur/Dream-Night/tree/dream/src/assets/backgrounds/dream.png?raw=true)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
 ## Development server

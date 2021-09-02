@@ -1,4 +1,5 @@
-<div class="maincontainer" (mouseover)="showHint()" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
+<div class="maincontainer" (mouseover)="showHint()" (click)="darksky=!darksky;rotatesky=!rotatesky;"
+  [class.darkgalaxy]="darksky">
 
   <div class="stars">
     <div class="star" *ngFor="let count of starCountArray">
@@ -40,17 +41,22 @@
     <span> NIGHT </span>
   </div>
 
-  <div *ngIf="showhint" class="hint">
+  <div [style.opacity]="showhint?1:0" class="hint">
     <span id="musichint">Press SPACE to toggle Music / </span>
 
     <span id="moodhint">CLICK to change MOOD</span>
   </div>
 
-  <div class="midnight-moon">
+
+
+  <div *ngIf="!realMoon" class="midnight-moon">
     <div class="midnight-moon-circle midnight-moon-circle1 "></div>
     <div class="midnight-moon-circle midnight-moon-circle2 "></div>
     <div class="midnight-moon-circle midnight-moon-circle3 "></div>
     <div class="midnight-moon-circle midnight-moon-circle4 "></div>
+  </div>
+  <div *ngIf="realMoon" class="realmoon">
+    <img src="assets/backgrounds/moon.png" height="200vh" width="200vh" alt="moon">
   </div>
 
 </div>

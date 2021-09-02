@@ -9,6 +9,7 @@ import { MusicControllerService } from 'src/app/services/music-controller.servic
 })
 export class BaseComponent implements OnInit {
 
+  realMoon:boolean=true;
   showhint: boolean = false;
   darksky: boolean = false;
   rotatesky: boolean = true;
@@ -75,7 +76,7 @@ export class BaseComponent implements OnInit {
       this.showhint = true
       setTimeout(() => {
         this.showhint = false
-      }, 15000);
+      }, 8000);
     }
   }
 

@@ -575,6 +575,11 @@
     animation: glow 20s linear 0s infinite alternate forwards,
         move var(--moveduration) linear calc((var(--moveduration) / -1.34)) infinite forwards;
 }
+.realmoon{
+    position: relative;
+    --moveduration: 300s;
+    animation:  move var(--moveduration) linear calc((var(--moveduration) / -1.34)) infinite forwards;
+}
 @keyframes move {
     0% {
         transform: translate(5vw, 45vh);
@@ -640,7 +645,8 @@
     user-select: none;
     outline: none;
     z-index: 999;
-    animation:flash 8000ms linear infinite 
+    // animation:flash 8000ms linear infinite 
+    transition: all 1000ms linear;
 }
 
 .hint > span {

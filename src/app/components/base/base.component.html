@@ -1,4 +1,4 @@
-<div class="maincontainer" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
+<div class="maincontainer" (mouseover)="showHint()" (click)="darksky=!darksky;rotatesky=!rotatesky;" [class.darkgalaxy]="darksky">
 
   <div class="stars">
     <div class="star" *ngFor="let count of starCountArray">
@@ -43,7 +43,7 @@
   <div *ngIf="showhint" class="hint">
     <span id="musichint">Press SPACE to toggle Music / </span>
 
-    <span id="moodhint">Click on screen to change MOOD</span>
+    <span id="moodhint">CLICK to change MOOD</span>
   </div>
 
   <div class="midnight-moon">

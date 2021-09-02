@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateTaskComponent } from './components/create-task/create-task.component';
+import { BaseComponent } from './components/base/base.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateTaskComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,

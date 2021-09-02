@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BaseComponent } from './components/base/base.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'authentication', pathMatch: 'full' },
-  { path: 'authentication', loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule) }
+  { path: '', redirectTo: 'night', pathMatch: 'full' },
+  { path: 'night', component:BaseComponent }
 ];
 
 @NgModule({

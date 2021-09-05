@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { MusicControllerService } from 'src/app/services/music-controller.service';
 
 
@@ -11,6 +12,7 @@ import { MusicControllerService } from 'src/app/services/music-controller.servic
 
 export class BaseComponent implements OnInit {
 
+  user!: string
   realMoon: boolean = false;
   actionpanel: boolean = false;
   darksky: boolean = false;
@@ -18,9 +20,20 @@ export class BaseComponent implements OnInit {
   attachedString: string = '';
   starCountArray = new Array(25)
 
-  constructor(public musicController: MusicControllerService) { }
+
+  constructor(public musicController: MusicControllerService, private activated_route: ActivatedRoute,public router:Router) { }
 
   ngOnInit(): void {
+ 
+    try {
+      this.user = decodeURIComponent(escape(window.atob(this.activated_route.snapshot.paramMap.get("code"))));
+      alert('Hello ' + this.user + ' 😀')
+      
+    } catch (error) {
+      console.log('could not resolove user')
+      this.router.navigate(['../getuser'],{relativeTo:this.activated_route})
+      return
+    }
 
     this.showActionPanel()
     this.disableScroll()
@@ -53,14 +66,18 @@ export class BaseComponent implements OnInit {
     }
   }
 
-  surprise(str: string = '❤'): boolean {
+  register(){
+    this.router.navigate(['../getuser'],{relativeTo:this.activated_route})
+  }
+
+  surprise(): boolean {
     if (this.attachedString.length >= 1) {
 
       this.attachedString = ""
       return false
     }
     else {
-      this.attachedString = str
+      this.attachedString = this.user ?? '❤ ';
       return true
       // this.attachedString = "K♥VYA"
     }
@@ -86,7 +103,7 @@ export class BaseComponent implements OnInit {
       e.preventDefault();
     }, wheelOpt); // mobile
     window.addEventListener('keydown', (e) => {
-      console.log({ e });
+      // console.log({ e });
 
       if (e.key == 'q' || e.key == "Q") {
         this.surprise()

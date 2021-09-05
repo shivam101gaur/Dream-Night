@@ -43,7 +43,7 @@
     <span> NIGHT </span>
   </div>
 
-  <div [style.opacity]="actionpanel?1:1" class="actionpanel">
+  <div [style.opacity]="actionpanel?1:0" class="actionpanel">
 
     <div [class.activePanelBtn]="musicController.sound_on" (click)="musicController.toggle_sound()">
       <span class="material-icons">
@@ -71,6 +71,11 @@
     <div [class.activePanelBtn]="attachedString.length >= 1" (click)="surprise()" >
       <span class="material-icons">
         celebration
+      </span>
+    </div>
+    <div *ngIf="!user" (click)="register()" >
+      <span class="material-icons">
+        person_outline
       </span>
     </div>
     <div [class.activePanelBtn]="isFullScreen" (click)="togglefullscreen()">

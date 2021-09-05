@@ -1,0 +1,20 @@
+<div class="maincontainer">
+    <div class="inputdiv">
+        <input placeholder="Who's your fav ?" matInput autofocus spellcheck="false" (input)="generateUser()" [(ngModel)]="input" type="text">
+    </div>
+    <div class="outputdiv">
+<span>
+
+    {{input}}
+</span>
+        <span style="font-size: 5vh;color: green;" class="material-icons">
+            arrow_forward
+        </span> 
+        <span (click)="startdream()">
+
+            {{usercode}}
+        </span>
+
+    </div>
+
+</div>

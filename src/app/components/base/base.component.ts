@@ -27,7 +27,7 @@ export class BaseComponent implements OnInit {
  
     try {
       this.user = decodeURIComponent(escape(window.atob(this.activated_route.snapshot.paramMap.get("code"))));
-      alert('Hello ' + this.user + ' 😀')
+      // alert('Hello ' + this.user + ' 😀')
       
     } catch (error) {
       console.log('could not resolove user')

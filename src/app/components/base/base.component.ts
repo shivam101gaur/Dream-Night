@@ -64,7 +64,7 @@ export class BaseComponent implements OnInit {
   constructor(public musicController: MusicControllerService) { }
 
   ngOnInit(): void {
-    document.body.style.cursor = 'none';
+    // document.body.style.cursor = 'none';
     this.showHint()
     // this.musicController.play_bgm()
     this.disableScroll()

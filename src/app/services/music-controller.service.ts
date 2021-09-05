@@ -6,7 +6,7 @@ import { Howl, Howler } from 'howler';
 })
 export class MusicControllerService {
   _Howler = Howler;
-  sound_on: boolean = true;
+  sound_on: boolean = false;
   
   //storing current playing music here
   bgm_play_ref: any;
@@ -25,6 +25,7 @@ export class MusicControllerService {
   play_bgm() {
     if (!this.bgm_play_ref) {
       this.bgm_play_ref = this.bgm.play();
+      this.sound_on = true;
       this.bgm.once('play', function () {
         console.log('bgm playing')
         this.sound_on = true;

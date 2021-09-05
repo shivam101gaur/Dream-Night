@@ -1,8 +1,10 @@
-<div class="maincontainer" (mouseover)="showHint()" (click)="darksky=!darksky;rotatesky=!rotatesky;"
-  [class.darkgalaxy]="darksky">
+<div class="maincontainer" (mouseover)="showActionPanel()" [class.darkgalaxy]="darksky">
 
   <div class="stars">
     <div class="star" *ngFor="let count of starCountArray">
+      <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
+        {{ attachedString }}
+      </span>
     </div>
     <div class="star">
       <span style="animation: twinkle 0s ease-in infinite forwards alternate;">
@@ -41,10 +43,42 @@
     <span> NIGHT </span>
   </div>
 
-  <div [style.opacity]="showhint?1:0" class="hint">
-    <span id="musichint">Press SPACE to toggle Music / </span>
+  <div [style.opacity]="actionpanel?1:1" class="actionpanel">
 
-    <span id="moodhint">CLICK to change MOOD</span>
+    <div [class.activePanelBtn]="musicController.sound_on" (click)="musicController.toggle_sound()">
+      <span class="material-icons">
+        audiotrack
+      </span>
+    </div>
+
+    <div  [class.activePanelBtn]="darksky"  (click)="darksky=!darksky;">
+      <span class="material-icons">
+        wallpaper
+      </span>
+    </div>
+
+    <div [class.activePanelBtn]="realMoon" (click)="realMoon=!realMoon">
+      <span class="material-icons">
+        nights_stay
+      </span>
+    </div>
+
+    <div  [class.activePanelBtn]="!rotatesky"  (click)="rotatesky=!rotatesky;">
+      <span class="material-icons">
+        auto_awesome
+      </span>
+    </div>
+    <div [class.activePanelBtn]="attachedString.length >= 1" (click)="surprise()" >
+      <span class="material-icons">
+        celebration
+      </span>
+    </div>
+    <div [class.activePanelBtn]="isFullScreen" (click)="togglefullscreen()">
+      <span class="material-icons">
+        fullscreen
+      </span>
+    </div>
+
   </div>
 
 

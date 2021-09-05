@@ -582,7 +582,7 @@
 }
 @keyframes move {
     0% {
-        transform: translate(5vw, 45vh);
+        transform: translate(10vw, 55vh);
     }
 
     100% {
@@ -628,31 +628,66 @@
     height: 1vh;
 }
 .darkgalaxy {
-    background: black;
+    background: black;   
 }
 
-.hint {
+.actionpanel {
     position: absolute;
     top: 85%;
-    left: 0;
-    right: 0;
-    color: #fff;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-weight: bold;
-    font-size: 2.5vmin;
-    letter-spacing: 1vmin;
+    left: auto;
+    right: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:fit-content;
+    width: fit-content;
+    min-width: 5vw;
+    // background: linear-gradient(232deg, #eeeeee73, transparent);
+    background-color: rgba(255, 255, 255, 0.267);
+    backdrop-filter: blur(0.25vh);
+
+    border-radius: 0.5vh;
+
+    overflow: visible;
     user-select: none;
     outline: none;
-    z-index: 999;
-    // animation:flash 8000ms linear infinite
-    transition: all 1000ms linear;
+    z-index: 2999;
+    transition: all 1500ms ease-out;
 }
 
-.hint > span {
+.actionpanel > div {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 2.5vmin;
+    letter-spacing: 1vmin;
     color: white;
-    // background-clip: text;
-    // background: linear-gradient(white, #38495a);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
+    transition: all 300ms ease-out;
+}
+.actionpanel > div > span {
+    font-size: 3.5vmin;
+    margin: 1vh;
+    padding: 1vh;
+}
+.actionpanel > div:hover {
+    
+    margin-top: -1vh;
+
+    border-bottom:solid rgba(255, 255, 255, 0) 0.5vh;
+    border-top:solid white 0.5vh;
+    background-color: rgb(2, 15, 58);
+
+}
+.activePanelBtn{
+    margin-top: -.1 vh;
+    margin-bottom: -.1vh;
+
+
+    border-bottom:solid white .1vh;
+    border-top:solid white .1vh;
+    background-color: rgba(2, 15, 58, 0.52);
 }

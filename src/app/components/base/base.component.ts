@@ -7,16 +7,66 @@ import { MusicControllerService } from 'src/app/services/music-controller.servic
   templateUrl: './base.component.html',
   styleUrls: ['./base.component.scss']
 })
+
+
 export class BaseComponent implements OnInit {
 
-  realMoon:boolean=true;
-  showhint: boolean = false;
+  realMoon: boolean = false;
+  actionpanel: boolean = false;
   darksky: boolean = false;
   rotatesky: boolean = true;
   attachedString: string = '';
   starCountArray = new Array(25)
 
-  // call this to Disable
+  constructor(public musicController: MusicControllerService) { }
+
+  ngOnInit(): void {
+
+    this.showActionPanel()
+    this.disableScroll()
+  }
+
+  togglefullscreen() {
+    let elem = document.documentElement;
+    if (!this.isFullScreen) {
+      elem.requestFullscreen({ navigationUI: "show" }).then(() => { }).catch(err => {
+        alert(`An error occurred while trying to switch into full-screen mode: ${err.message} (${err.name})`);
+      });
+    } else {
+      document.exitFullscreen().then(() => { });
+    }
+  }
+
+  get isFullScreen(): boolean {
+    return ((window.innerWidth == screen.width && window.innerHeight == screen.height))
+  }
+
+  showActionPanel() {
+
+    if (!this.actionpanel) {
+      this.actionpanel = true
+      document.body.style.cursor = 'default';
+      setTimeout(() => {
+        this.actionpanel = false
+        document.body.style.cursor = 'none';
+      }, 8000);
+    }
+  }
+
+  surprise(str: string = '❤'): boolean {
+    if (this.attachedString.length >= 1) {
+
+      this.attachedString = ""
+      return false
+    }
+    else {
+      this.attachedString = str
+      return true
+      // this.attachedString = "K♥VYA"
+    }
+  }
+
+
   disableScroll() {
 
     var supportsPassive = false;
@@ -39,14 +89,7 @@ export class BaseComponent implements OnInit {
       console.log({ e });
 
       if (e.key == 'q' || e.key == "Q") {
-        if (this.attachedString.length >= 1) {
-
-          this.attachedString = ""
-        }
-        else {
-          this.attachedString = "♥"
-          // this.attachedString = "K♥VYA"
-        }
+        this.surprise()
       }
 
       if (e.key == ' ' || e.key == 'Enter') {
@@ -60,24 +103,4 @@ export class BaseComponent implements OnInit {
       }
     }, false);
   }
-
-  constructor(public musicController: MusicControllerService) { }
-
-  ngOnInit(): void {
-    // document.body.style.cursor = 'none';
-    this.showHint()
-    // this.musicController.play_bgm()
-    this.disableScroll()
-    // this.attachedString = "Hi there ❤"
-  }
-
-  showHint() {
-    if (!this.showhint) {
-      this.showhint = true
-      setTimeout(() => {
-        this.showhint = false
-      }, 8000);
-    }
-  }
-
 }

@@ -1,7 +1,7 @@
 # DREAM-NIGHT 
 ## Live App Running 
 
-                       [ Start Dreaming 🤗](https://dream-night-f5549.web.app)
+[ Start Dreaming 🤗](https://dream-night-f5549.web.app)
 
 ![Screen-Shot](src/assets/backgrounds/dream.png?raw=true)
 ## Hit SPACE for music

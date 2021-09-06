@@ -5,7 +5,7 @@
 
 ![Screen-Shot](src/assets/backgrounds/dream.png?raw=true)
 ## Hit SPACE for music
-## Author
+## 🧐 Author
 
 [@shivam101gaur](https://github.com/shivam101gaur)
 

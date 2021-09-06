@@ -1,7 +1,7 @@
 # DREAM-NIGHT
-# Hit SPACE for music
-[ LIVE ](https://dream-night-f5549.web.app)
+[ Start Dreaming ](https://dream-night-f5549.web.app)
 ![Screen-Shot](https://github.com/shivam101gaur/Dream-Night/tree/dream/src/assets/backgrounds/dream.png?raw=true)
+## Hit SPACE for music
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
